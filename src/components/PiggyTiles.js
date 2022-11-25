@@ -1,7 +1,7 @@
 import React from 'react';
 import PigTile from './PigTile';
 
-function PiggyTiles({ hogs }) {
+function PiggyTiles({ hogs, handleHidePiggy }) {
 
     const pigTileCollection = hogs.map((hog) => {
         return (
@@ -14,6 +14,7 @@ function PiggyTiles({ hogs }) {
                 weight={hog.weight}
                 medal={hog["highest medal achieved"]}
                 image={hog.image}
+                handleHidePiggy={handleHidePiggy}
             />
         </div>
         )

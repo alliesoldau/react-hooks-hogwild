@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function PigTile({ name, specialty, greased, weight, medal, image}) {
+function PigTile({ name, specialty, greased, weight, medal, image, handleHidePiggy}) {
     
     const [isToggled, setIsToggled] = useState(true)
     const [isSpecialty, setSpecialty] = useState("")
@@ -23,6 +23,11 @@ function PigTile({ name, specialty, greased, weight, medal, image}) {
         }
     }
 
+    function onHidePiggy() {
+        // console.log(name)
+        handleHidePiggy(name)
+    }
+
     return (
         <div className="ui card" onClick={toggleCardDisplay}>
             <div className="image">
@@ -33,6 +38,7 @@ function PigTile({ name, specialty, greased, weight, medal, image}) {
             <div className="greased">{String(isGreased)}</div>
             <div className="weight">{isWeight}</div>
             <div className="medal">{isMedal}</div>
+            <button onClick={onHidePiggy}>Hide</button>
         </div>
     )
 }
