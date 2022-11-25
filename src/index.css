@@ -140,6 +140,30 @@ ul {
   clear: both;
 }
 
+img {
+  display: flex;
+  width: 200px;
+}
+
+.name {
+  text-align: left;
+  margin-left: 10px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.specialty, .greased, .weight, .medal {
+  text-align: left;
+  margin-left: 10px;
+  font-size: x-small;
+  color: grey;
+}
+
+.filter {
+  text-align: left;
+  display: block;
+}
+
 
 @keyframes App-logo-spin {
   from {
