@@ -8,18 +8,35 @@ import hogs from "../porkers_data";
 function App() {
 
 	const [isHogs, setHogs] = useState(hogs);
+	const [searchNameQuery, setSearchNameQuery] = useState("");
+	const [searchWeightQuery, setSearchWeightQuery] = useState("");
+
+
+	function handleOnNameChange(e) { 
+		setSearchNameQuery(e.target.value);
+	}
+
+	function handleOnWeightChange(e) { 
+		setSearchWeightQuery(e.target.value);
+	}
+
+	const searchResults = isHogs.filter((hog) => {
+		return hog.name.toLowerCase().includes(searchNameQuery.toLowerCase())
+	})
+
+	function handleOnWeightChange(e) { 
+		console.log(`weight change: ${e.target.value}`);
+	}
 
 	return (
 		<div className="App">
 			<Nav />
 			<FilterAndSort 
-				// TO DO: make a filter const for when you select the silter
-				// and feed that to PiggyTiles instead of isHogs
-				// make a drop down on the Filter and Sort comp 
-				// call a callback function to filter
+				handleOnNameChange={handleOnNameChange}
+				handleOnWeightChange={handleOnWeightChange}
 			/>
 			<PiggyTiles 
-				hogs={isHogs}
+				hogs={searchResults}
 			/>
 		</div>
 	);
