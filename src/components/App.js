@@ -16,12 +16,8 @@ function App() {
 		setSearchNameQuery(e.target.value);
 	}
 
-	function handleOnWeightChange(e) { 
-		setSearchWeightQuery(e.target.value);
-	}
-
 	const searchResults = isHogs.filter((hog) => {
-		return hog.name.toLowerCase().includes(searchNameQuery.toLowerCase())
+		return hog.name.toLowerCase().includes(searchNameQuery.toLowerCase());
 	})
 
 	function handleOnWeightChange(e) { 
@@ -33,7 +29,6 @@ function App() {
 			<Nav />
 			<FilterAndSort 
 				handleOnNameChange={handleOnNameChange}
-				handleOnWeightChange={handleOnWeightChange}
 			/>
 			<PiggyTiles 
 				hogs={searchResults}

@@ -9,8 +9,6 @@ function FilterAndSort({ handleOnNameChange, handleOnWeightChange }) {
                 <label>Filter by name</label>
                     <input type="text" onChange={handleOnNameChange}></input>
                     <br></br>
-                <label>Filter by weight</label>
-                    <input type="number" onChange={handleOnWeightChange}></input>
             </form>
         </div>
     )
