@@ -21,21 +21,23 @@ function NewPiggyForm({ onNewPiggyFormSubmit }) {
     }
 
     return(
-        <div>
-            <h4>Add a new piggy</h4>
+        <div className="newPiggyFormWrapper">
+            <h3>Add a new piggy</h3>
             <form 
-                className="newPiggyForm"
+                className="ui form"
                 onSubmit={handleSubmit}
-            >
-                <label>Name
-                    <input 
-                        type="text" 
-                        value={name} 
-                        placeholder="Bacon"
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                </label>
-                <br></br>
+            >   
+                <div className="field">
+                    <label>Name
+                        <input 
+                            type="text" 
+                            value={name} 
+                            placeholder="Bacon"
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                    </label>
+                </div>
+                <div className="field">
                 <label>Specialty
                     <input 
                         type="text" 
@@ -44,7 +46,8 @@ function NewPiggyForm({ onNewPiggyFormSubmit }) {
                         onChange={(e) => setSpecialty(e.target.value)}
                     />
                 </label>
-                <br></br>
+                </div>
+                <div className="field">
                 <label>Greased
                     <select 
                         value={greased} 
@@ -53,7 +56,8 @@ function NewPiggyForm({ onNewPiggyFormSubmit }) {
                             <option>false</option>
                     </select>  
                 </label>                  
-                <br></br>
+                </div>
+                <div className="field">
                 <label>Weight
                     <input 
                         type="number" 
@@ -62,7 +66,8 @@ function NewPiggyForm({ onNewPiggyFormSubmit }) {
                         onChange={(e) => setWeight(e.target.value)}
                     />
                 </label>
-                <br></br>
+                </div>
+                <div className="field">
                 <label>Medal
                     <input 
                         type="text" 
@@ -71,7 +76,8 @@ function NewPiggyForm({ onNewPiggyFormSubmit }) {
                         onChange={(e) => setMedal(e.target.value)}
                     />
                 </label>
-                <br></br>
+                </div>
+                <div className="field">
                 <label>Image
                     <input 
                         type="text" 
@@ -80,8 +86,8 @@ function NewPiggyForm({ onNewPiggyFormSubmit }) {
                         onChange={(e) => setImage(e.target.value)}
                     />
                 </label>
-                <br></br>
-                <input type="submit" value="Add Piggy" />
+                </div>
+                <input type="submit" className="ui basic black button"/>
             </form>
         </div>
     )

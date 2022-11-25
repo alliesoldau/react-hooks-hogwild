@@ -31,17 +31,19 @@ function PigTile({ name, specialty, greased, weight, medal, image, handleHidePig
     if (isHidden) return null;
 
     return (
-        <div className="ui card" onClick={toggleCardDisplay}>
+        <div className="ui card eight wide column pigTile" onClick={toggleCardDisplay}>
             <div className="image">
                 <img src={image}/>
             </div>
-            <div className="name">{name}</div>
-            <div className="specialty">{isSpecialty}</div>
-            <div className="greased">{String(isGreased)}</div>
-            <div className="weight">{isWeight}</div>
-            <div className="medal">{isMedal}</div>
-            <button onClick={onHidePiggy}>Hide</button>
-        </div>
+            <h3>{name}</h3>
+            <div className="meta">{isSpecialty}</div>
+            <div className="meta">{String(isGreased)}</div>
+            <div className="meta">{isWeight}</div>
+            <div className="meta">{isMedal}</div>
+            <div className="content">
+                <button className="ui basic pink button" onClick={onHidePiggy}>Hide</button>
+            </div>
+       </div>
     )
 }
 

@@ -38,19 +38,25 @@ function App() {
 
 
 	return (
-		<div className="App">
-			<Nav />
-			<FilterAndSort 
-				handleOnNameChange={handleOnNameChange}
-				handleOnGreaseSelect={handleOnGreaseSelect}
-				onChangeSortBy={setSortBy}
-			/>
+		<div className="ui grid container App">
+			 <div className="sixteen wide column centered">
+        		<Nav />
+      		</div>
+			<div className="sixteen wide column centered">
+				<FilterAndSort 
+					handleOnNameChange={handleOnNameChange}
+					handleOnGreaseSelect={handleOnGreaseSelect}
+					onChangeSortBy={setSortBy}
+				/>
+			</div>
 			<NewPiggyForm
 				onNewPiggyFormSubmit={handleNewPiggy}
 			/>
-			<PiggyTiles 
-				hogs={searchResults}
-			/>
+			<div className="sixteen wide column centered">
+				<PiggyTiles 
+					hogs={searchResults}
+				/>
+			</div>
 		</div>
 	);
 }

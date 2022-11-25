@@ -22,8 +22,9 @@ body {
   margin-bottom: 2%;
 }
 
-.filterWrapper {
+.filterWrapper, .newPiggyFormWrapper {
   margin: 2% 0% 2% 0%;
+  text-align: left;
 }
 
 .headerText {
@@ -86,7 +87,7 @@ ul {
   float: left;
   margin: 2%;
   padding: 1%;
-  outline: #3B0B0B dotted thick;
+  outline: pink groove thick;
   transition: 0.75s;
   opacity: 1;
 }
@@ -109,7 +110,7 @@ ul {
 }
 
 .pigTile h3 {
-  color: #FBB;
+  color: red;
 }
 
 .minPigTile {
@@ -128,7 +129,6 @@ ul {
   transform: scale(1.05);
 }
 
-
 .App-logo {
   animation: App-logo-spin infinite 5s linear;
   height: 80px;
@@ -138,30 +138,6 @@ ul {
 .footer {
   padding: 1%;
   clear: both;
-}
-
-img {
-  display: flex;
-  width: 200px;
-}
-
-.name {
-  text-align: left;
-  margin-left: 10px;
-  font-size: large;
-  font-weight: bold;
-}
-
-.specialty, .greased, .weight, .medal {
-  text-align: left;
-  margin-left: 10px;
-  font-size: x-small;
-  color: grey;
-}
-
-.filter {
-  text-align: left;
-  display: block;
 }
 
 

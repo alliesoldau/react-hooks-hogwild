@@ -7,21 +7,27 @@ function FilterAndSort({ handleOnNameChange, handleOnGreaseSelect, onChangeSortB
     }
     
     return (
-        <div className="filter">
-            <h2>Filter by...</h2>
-            <form className="filterName">
-                <label>Filter by Name</label>
-                    <input type="text" onChange={handleOnNameChange}></input>
-                    <br></br>
-                <label>Filter by Greased?</label>
-                    <input type="checkbox" onChange={handleOnGreaseSelect}></input>
-                    <br></br>
-                <label>Sort by...</label>
-                <select onChange={handleSortBy}>
-                    <option>Name</option>
-                    <option>Weight</option>
-                </select>
-            </form>
+        <div className="filterWrapper">
+            <div className="four wide column">
+                <div className="ui form">
+                    <h3>Filter by...</h3>
+                        <div className="field">
+                            <label>Filter by Name</label>
+                                <input type="text" onChange={handleOnNameChange}></input>
+                        </div>
+                        <div className="field">
+                            <label>Filter by Greased?</label>
+                                <input type="checkbox" onChange={handleOnGreaseSelect} className="ui toggle checkbox"></input>
+                        </div>
+                        <div className="field">
+                            <label>Sort by...</label>
+                            <select onChange={handleSortBy} className="ui selection dropdown">
+                                <option>Name</option>
+                                <option>Weight</option>
+                            </select>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
