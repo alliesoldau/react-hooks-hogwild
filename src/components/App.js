@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Nav from "./Nav";
 import PiggyTiles from "./PiggyTiles";
 import FilterAndSort from "./FilterAndSort";
+import NewPiggyForm from "./NewPiggyForm";
 
 import hogs from "../porkers_data";
 
@@ -11,6 +12,10 @@ function App() {
 	const [searchQuery, setSearchQuery] = useState("");
 	const [isChecked, setChecked] = useState(false)
 	const [sortBy, setSortBy] = useState("")
+
+	function handleNewPiggy(newPiggy) {
+		setHogs([...hogs, newPiggy]);
+	}
 
 	function handleOnNameChange(e) { 
 		setSearchQuery(e.target.value);
@@ -39,6 +44,9 @@ function App() {
 				handleOnNameChange={handleOnNameChange}
 				handleOnGreaseSelect={handleOnGreaseSelect}
 				onChangeSortBy={setSortBy}
+			/>
+			<NewPiggyForm
+				onNewPiggyFormSubmit={handleNewPiggy}
 			/>
 			<PiggyTiles 
 				hogs={searchResults}
