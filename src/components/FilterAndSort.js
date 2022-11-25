@@ -16,7 +16,6 @@ function FilterAndSort({ handleOnNameChange, handleOnGreaseSelect, onChangeSortB
                 <label>Filter by Greased?</label>
                     <input type="checkbox" onChange={handleOnGreaseSelect}></input>
                     <br></br>
-            {/* TO DO: Sort by name or weight */}
                 <label>Sort by...</label>
                 <select onChange={handleSortBy}>
                     <option>Name</option>

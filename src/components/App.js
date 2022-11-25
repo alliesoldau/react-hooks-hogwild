@@ -21,15 +21,8 @@ function App() {
 		isChecked ? console.log("true") : console.log("false")
 	}
 
-	const [hidePiggy, setHidePiggy] = useState("");
-
 	const searchResults = isHogs
 		.filter ((hog) => (isChecked ? hog.greased : true) && (hog.name.toLowerCase().includes(searchQuery.toLowerCase())))
-		.filter ((hog) => {
-			if (hidePiggy.toLowerCase() !== hog.name.toLowerCase()) {
-				return hog
-			}
-		})
 		.sort((hog1, hog2) => {
 			if (sortBy === "Weight") {
 				return hog1.weight - hog2.weight;
@@ -49,7 +42,6 @@ function App() {
 			/>
 			<PiggyTiles 
 				hogs={searchResults}
-				handleHidePiggy={setHidePiggy}
 			/>
 		</div>
 	);

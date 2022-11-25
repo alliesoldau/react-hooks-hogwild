@@ -7,6 +7,7 @@ function PigTile({ name, specialty, greased, weight, medal, image, handleHidePig
     const [isGreased, setGreased] = useState("")
     const [isWeight, setWeight] = useState("")
     const [isMedal, setMedal] = useState("")
+    const [isHidden, setIsHidden] = useState(false)
     
     function toggleCardDisplay() {
         setIsToggled(!isToggled)
@@ -24,9 +25,10 @@ function PigTile({ name, specialty, greased, weight, medal, image, handleHidePig
     }
 
     function onHidePiggy() {
-        // console.log(name)
-        handleHidePiggy(name)
+        setIsHidden(true);
     }
+
+    if (isHidden) return null;
 
     return (
         <div className="ui card" onClick={toggleCardDisplay}>
