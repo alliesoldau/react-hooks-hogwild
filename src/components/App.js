@@ -8,27 +8,28 @@ import hogs from "../porkers_data";
 function App() {
 
 	const [isHogs, setHogs] = useState(hogs);
-	const [searchNameQuery, setSearchNameQuery] = useState("");
-	const [searchWeightQuery, setSearchWeightQuery] = useState("");
-
+	const [searchQuery, setSearchQuery] = useState("");
+	const [isChecked, setChecked] = useState(false)
 
 	function handleOnNameChange(e) { 
-		setSearchNameQuery(e.target.value);
+		setSearchQuery(e.target.value);
 	}
 
-	const searchResults = isHogs.filter((hog) => {
-		return hog.name.toLowerCase().includes(searchNameQuery.toLowerCase());
-	})
-
-	function handleOnWeightChange(e) { 
-		console.log(`weight change: ${e.target.value}`);
+	function handleOnGreaseSelect() {
+		setChecked(!isChecked)
+		isChecked ? console.log("true") : console.log("false")
 	}
+
+	const searchResults = isHogs
+		.filter ((hog) => (isChecked ? hog.greased : true) && (hog.name.toLowerCase().includes(searchQuery.toLowerCase())));
+
 
 	return (
 		<div className="App">
 			<Nav />
 			<FilterAndSort 
 				handleOnNameChange={handleOnNameChange}
+				handleOnGreaseSelect={handleOnGreaseSelect}
 			/>
 			<PiggyTiles 
 				hogs={searchResults}
